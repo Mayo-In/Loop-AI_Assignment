@@ -13,8 +13,7 @@ class Test_HistoryByStore:
     password = ReadConfig.getPassword()
     logger = LogGen.logGen()
 
-
-    def test_navigateToDataTable(self,setup):
+    def test_navigateToDataTable(self, setup):
         self.logger.info("*********** Data Table ***********")
         self.logger.info("Test_003 : Navigating to the Data Table")
         self.driver = setup

@@ -1,13 +1,18 @@
+import pytest
 from pageObjects.TransactionsDataVerification import TransactionsData
 from pageObjects.LoginPage import LoginPage
 from Utilities.readPrperties import ReadConfig
 from Utilities.customLogger import LogGen
+import time
 
-class Transaction:
+
+class Test_Transaction:
     url = ReadConfig.getAppURL()
     username = ReadConfig.getUsername()
     password = ReadConfig.getPassword()
     logger = LogGen.logGen()
+    locs = ["Artisan Alchemy", "Blissful Buffet"]
+    mkts = ["Grubhub"]
 
     def test_transactions(self,setup):
         self.logger.info("*********** Data Table ***********")
@@ -20,11 +25,11 @@ class Transaction:
         self.loginpage.setUserName(self.username)
         self.loginpage.setPassWord(self.password)
         self.loginpage.clickLogin()
-        self.driver.implicitly_wait(10)
+        self.driver.implicitly_wait(30)
 
-        self.dataTable = TransactionsData(self.driver)
-        self.dataTable.clickOn3PChargebacks()
-        self.dataTable.clickOnTransactions()
+        self.transactionTable = TransactionsData(self.driver)
+        self.transactionTable.clickOn3PChargebacks()
+        self.transactionTable.clickOnTransactions()
         pageTitle = self.driver.title
 
         if pageTitle == "Loop - 3P Chargebacks - Transactions":
@@ -36,5 +41,9 @@ class Transaction:
             self.logger.error("Fail: Failed to navigate to the Transactions Page.")
             assert False
 
-
+        self.transactionTable.setLocationsFilters(self.locs)
+        time.sleep(15)
+        self.transactionTable.setMarketPlaceFilter_xpath(self.mkts)
+        time.sleep(15)
+        self.transactionTable.extractCSVFile()
 

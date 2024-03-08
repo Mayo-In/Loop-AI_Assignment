@@ -4,7 +4,7 @@ import logging
 class LogGen:
     @staticmethod
     def logGen():
-        logging.basicConfig(filename="./Logs/automation_PartB.log",
+        logging.basicConfig(filename="./Logs/Automation_Log_PartB.log",
                             format='%(asctime)s: %(levelname)s: %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p',force=True)
         logger = logging.getLogger()
         logger.setLevel(logging.INFO)
