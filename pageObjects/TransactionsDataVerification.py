@@ -17,8 +17,8 @@ class TransactionsData:
     div.MuiBox-root.css-13ev6ou > button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeSmall.MuiButton-containedSizeSmall.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeSmall.MuiButton-containedSizeSmall.css-1un93pa-MuiButtonBase-root-MuiButton-root"
     dropdown_marketplaceFilter_xpath = "//*[@id='main_start_app']/main/div/div/header/div/div/button[3]"
     table_xpath = "//*[@id='view-table-id']/div/table"
-    button_forward_xpath = "//button[@data-testid='pagination-next']"
-
+    button_forward_xpath = "//*[@id='simple-tabpanel-overview']/div[2]/div[2]/div[2]/div/button[2]"
+    button_download_xpath = "//*[@id='simple-tabpanel-overview']/div[2]/div[2]/div[1]/div[2]/div"
 # ******************************** Function Logic ********************************
 
     def __init__(self, driver):
@@ -67,7 +67,7 @@ class TransactionsData:
             transactions = self.driver.find_elements(By.XPATH, "//tr")
 
             for i in range(len(transactions) - 1):
-                transactions_columns = self.driver.find_elements(By.XPATH, "//tr/td")
+                transactions_columns = self.driver.find_elements(By.XPATH, f"//tr[{i+1}]/td")
                 if len(transactions_columns) == 8:
                     order_ID.append(self.driver.find_element(By.XPATH, f"//tr[{counter}]/td[1]").text)
                     locations.append(self.driver.find_element(By.XPATH, f"//tr[{counter}]/td[2]").text)
@@ -99,8 +99,4 @@ class TransactionsData:
                                    "Transaction Type": transaction_type, "Lost Sale": lost_sale, "Net Payout": net_Payout,
                                    "Payout ID": payout_ID, "Payout Date": payout_Date})
         data_setup.to_csv('Transaction Data.csv')
-
-
-
-
 

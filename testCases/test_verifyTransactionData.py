@@ -3,7 +3,6 @@ from pageObjects.TransactionsDataVerification import TransactionsData
 from pageObjects.LoginPage import LoginPage
 from Utilities.readPrperties import ReadConfig
 from Utilities.customLogger import LogGen
-import time
 
 
 class Test_Transaction:
@@ -42,8 +41,8 @@ class Test_Transaction:
             assert False
 
         self.transactionTable.setLocationsFilters(self.locs)
-        time.sleep(15)
+
         self.transactionTable.setMarketPlaceFilter_xpath(self.mkts)
-        time.sleep(15)
+
         self.transactionTable.extractCSVFile()
 
