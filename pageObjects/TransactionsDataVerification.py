@@ -65,6 +65,8 @@ class TransactionsData:
         while flag:
             counter = 1
             transactions = self.driver.find_elements(By.XPATH, "//tr")
+            parent_row = False
+            row_number = 1
 
             for i in range(len(transactions) - 1):
                 transactions_columns = self.driver.find_elements(By.XPATH, f"//tr[{i+1}]/td")
@@ -77,10 +79,17 @@ class TransactionsData:
                     net_Payout.append(self.driver.find_element(By.XPATH, f"//tr[{counter}]/td[6]").text)
                     payout_ID.append(self.driver.find_element(By.XPATH, f"//tr[{counter}]/td[7]").text)
                     payout_Date.append(self.driver.find_element(By.XPATH, f"//tr[{counter}]/td[8]").text)
+                    parent_row = True
+                    row_number = counter
                 elif len(transactions_columns) == 5:
-                    order_ID.append("NA")
-                    locations.append("NA")
-                    order_State.append("NA")
+                    # order_ID.append("NA")
+                    # locations.append("NA")
+                    # order_State.append("NA")
+                    if parent_row:
+                        order_ID.append(self.driver.find_element(By.XPATH, f"//tr[{row_number}]/td[1]").text)
+                        locations.append(self.driver.find_element(By.XPATH, f"//tr[{row_number}]/td[2]").text)
+                        order_State.append(self.driver.find_element(By.XPATH, f"//tr[{row_number}]/td[3]").text)
+
                     transaction_type.append(self.driver.find_element(By.XPATH, f"//tr[{counter}]/td[1]").text)
                     lost_sale.append(self.driver.find_element(By.XPATH, f"//tr[{counter}]/td[2]").text)
                     net_Payout.append(self.driver.find_element(By.XPATH, f"//tr[{counter}]/td[3]").text)
@@ -94,6 +103,7 @@ class TransactionsData:
             else:
                 flag = False
                 break
+        # sorted_order_ID = order_ID.sort()
 
         data_setup = pd.DataFrame({"Order ID": order_ID, "location": locations, "Order State": order_State,
                                    "Transaction Type": transaction_type, "Lost Sale": lost_sale, "Net Payout": net_Payout,

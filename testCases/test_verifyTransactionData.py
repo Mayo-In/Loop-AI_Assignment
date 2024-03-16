@@ -13,7 +13,7 @@ class Test_Transaction:
     locs = ["Artisan Alchemy", "Blissful Buffet"]
     mkts = ["Grubhub"]
 
-    def test_transactions(self,setup):
+    def test_transactions(self, setup):
         self.logger.info("*********** Data Table ***********")
         self.logger.info("Test_005 : Navigating to Transactions Page")
         self.driver = setup

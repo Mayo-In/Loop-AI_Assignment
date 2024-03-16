@@ -51,10 +51,10 @@ class Test_HistoryByStore:
 
             if calculated_total == exp_total:
                 assert True
-                self.logger.info(f"Pass: The grand total is {exp_total} is matching with calculated value {calculated_total} for the {month_name}.")
+                self.logger.info(f"Pass: The grand total {exp_total} is matching with calculated value {calculated_total} for the {month_name}.")
             else:
                 self.driver.save_screenshot(".//Screenshots" + "test_verifyData.png")
-                self.logger.error(f"Fail: The grand total expected value is {exp_total} is not matching with calculated value {calculated_total} for the {month_name}.")
+                self.logger.error(f"Fail: The grand total expected value {exp_total} is not matching with calculated value {calculated_total} for the {month_name}.")
                 assert False
 
             self.driver.refresh()

@@ -25,3 +25,30 @@
 03/08/2024 11:50:42 PM: INFO: *********** Data Table ***********
 03/08/2024 11:50:42 PM: INFO: Test_005 : Navigating to Transactions Page
 03/08/2024 11:50:53 PM: INFO: Pass: Successfully navigated to the Transactions Page.
+03/09/2024 12:07:52 AM: INFO: *********** Data Table ***********
+03/09/2024 12:07:52 AM: INFO: Test_005 : Navigating to Transactions Page
+03/09/2024 12:08:08 AM: INFO: Pass: Successfully navigated to the Transactions Page.
+03/09/2024 12:15:47 AM: INFO: *********** Data Table ***********
+03/09/2024 12:15:47 AM: INFO: Test_005 : Navigating to Transactions Page
+03/09/2024 12:16:03 AM: INFO: Pass: Successfully navigated to the Transactions Page.
+03/09/2024 12:19:31 AM: INFO: *********** Data Table ***********
+03/09/2024 12:19:31 AM: INFO: Test_003 : Navigating to the Data Table
+03/09/2024 12:19:46 AM: INFO: Pass: Successfully navigated to the Data Table.
+03/09/2024 12:20:16 AM: INFO: *********** Data Table Verification ***********
+03/09/2024 12:20:16 AM: INFO: Test_004 : Calculate the Data for Each Month
+03/09/2024 12:22:14 AM: INFO: Pass: The grand total is 0.0 is matching with calculated value 0.0 for the Sep 2023.
+03/09/2024 12:24:51 AM: INFO: Pass: The grand total is 15563.04 is matching with calculated value 15563.04 for the Oct 2023.
+03/09/2024 12:27:22 AM: INFO: Pass: The grand total is 17658.08 is matching with calculated value 17658.08 for the Nov 2023.
+03/09/2024 12:30:35 AM: INFO: Pass: The grand total is 28508.62 is matching with calculated value 28508.62 for the Dec 2023.
+03/09/2024 12:33:06 AM: INFO: Pass: The grand total is 28354.7 is matching with calculated value 28354.7 for the Jan 2024.
+03/09/2024 12:35:59 AM: INFO: Pass: The grand total is 15265.78 is matching with calculated value 15265.78 for the Feb 2024.
+03/09/2024 12:38:29 AM: INFO: Pass: The grand total is 596.52 is matching with calculated value 596.52 for the Mar 2024.
+03/14/2024 11:27:59 AM: INFO: *********** Data Table ***********
+03/14/2024 11:27:59 AM: INFO: Test_003 : Navigating to the Data Table
+03/14/2024 11:28:25 AM: INFO: Pass: Successfully navigated to the Data Table.
+03/14/2024 11:29:17 AM: INFO: *********** Data Table ***********
+03/14/2024 11:29:17 AM: INFO: Test_005 : Navigating to Transactions Page
+03/14/2024 11:29:38 AM: INFO: Pass: Successfully navigated to the Transactions Page.
+03/14/2024 11:36:30 AM: INFO: *********** Data Table ***********
+03/14/2024 11:36:30 AM: INFO: Test_005 : Navigating to Transactions Page
+03/14/2024 11:37:10 AM: INFO: Pass: Successfully navigated to the Transactions Page.
