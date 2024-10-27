@@ -1,6 +1,7 @@
 This is a project given by Loop AI - https://www.tryloop.ai/
 
-Problem statement - Automate the following process:
-Evaluate the month wise collected data from the multiple businesses from the in given data table and validate the total with the given total on the data table.
+Problem Statement: 
+Automate the following process:
+Evaluate the monthly collected data from multiple businesses as presented in the provided data table, and validate the totals against the specified figures within the same table.
 
-I am using Selenium with Python to automate this process
+The automation of this process is implemented using Selenium in conjunction with the Python programming language.
